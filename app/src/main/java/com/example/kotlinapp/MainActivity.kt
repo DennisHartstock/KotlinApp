@@ -2,11 +2,13 @@ package com.example.kotlinapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import com.example.kotlinapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     //private lateinit var binding: ActivityMainBinding
+    private lateinit var helloTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +18,11 @@ class MainActivity : AppCompatActivity() {
 
 
         //binding.helloTextView.text = "Hello Kotlin"
+        helloTextView = findViewById(R.id.helloTextView)
+        helloTextView.text = "Hello Kotlin!"
+    }
 
-        var helloTextView = findViewById<TextView>(R.id.helloTextView).setText("Hello Kotlin!")
+    fun changeText(view: View) {
+        helloTextView.text = "Hey there"
     }
 }
